@@ -1,36 +1,5 @@
-import java.util.Scanner;
-
-public class VacationDetails {
-
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-
-        // Get vacation details from the user
-        System.out.print("Enter the date the vacation started (YYYY-MM-DD): ");
-        String startDate = scanner.nextLine();
-
-        System.out.print("Enter the city visited: ");
-        String cityVisited = scanner.nextLine();
-
-        System.out.print("Enter the country visited: ");
-        String countryVisited = scanner.nextLine();
-
-        System.out.print("Enter the number of days on vacation: ");
-        int numberOfDays = scanner.nextInt();
-        scanner.nextLine(); // Consume the newline character
-
-        System.out.print("Enter the mode of travel (car, airplane, ship, train, bus): ");
-        String modeOfTravel = scanner.nextLine();
-
-        // Display vacation details
-        System.out.println("\nVacation Details:");
-        System.out.println("Start Date: " + startDate);
-        System.out.println("City Visited: " + cityVisited);
-        System.out.println("Country Visited: " + countryVisited);
-        System.out.println("Number of Days: " + numberOfDays);
-        System.out.println("Mode of Travel: " + modeOfTravel);
-
-        // Close the scanner
-        scanner.close();
-    }
-}
+// Declare and initialize the variables
+        float floatVariable = 5.5f; // Example value
+        double doubleVariable = 10.5; // Example value
+        
+        // Perform the addition

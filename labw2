@@ -4,21 +4,6 @@
         
         // Perform the addition
 
-
-
-Scanner input = new Scanner(System.in);
-System.out.println("Enter student's last name:");
-String lastName = input.nextLine();
-System.out.println("Enter student's first name:");
-String firstName = input.nextLine();
-System.out.println("Enter student's year of birth:");
-int yearOfBirth = input.nextInt();
-String fullName = firstName + " " + lastName;
-String password = lastName + "*" + yearOfBirth;
-
-
-import java.util.Scanner;
-
 public class StudentRegistration {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -41,5 +26,3 @@ public class StudentRegistration {
 
     private static String generateTemporaryPassword(String firstName, String lastName) {
         return firstName.charAt(0) + lastName + "yearOfBirth";
-    }
-}

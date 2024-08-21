@@ -9,6 +9,41 @@ public class VacationDiary {
 
 }
 
+import java.util.Scanner;
+
+public class VacationDiary {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter Date Vacation Started (mm/dd/yyyy): ");
+        String startDate = scanner.nextLine();
+
+        System.out.print("Enter City Visited: ");
+        String cityVisited = scanner.nextLine();
+
+        System.out.print("Enter Country Visited: ");
+        String countryVisited = scanner.nextLine();
+
+        System.out.print("Enter number of days: ");
+        int numberOfDays = scanner.nextInt();
+        scanner.nextLine(); // Consume newline
+
+        System.out.print("Enter Mode of Travel (car, airplane, ship, train, bus): ");
+        String modeOfTravel = scanner.nextLine();
+
+        System.out.println("Details of your trip:");
+        System.out.println("Date: " + startDate);
+        System.out.println("City: " + cityVisited);
+        System.out.println("Country: " + countryVisited);
+        System.out.println("Number of Days: " + numberOfDays);
+        System.out.println("Traveled By: " + modeOfTravel);
+        System.out.println("Bye!!!");
+
+        scanner.close();
+    }
+}
+
+
 
 
 

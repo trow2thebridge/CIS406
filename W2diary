@@ -1,0 +1,33 @@
+
+
+
+
+
+
+
+Part 1
+Write the Java code to complete the following:
+1.Enter date vacation started.
+2. Enter the city visited.
+3.Enter the country visited.
+4.Enter the number of days.
+5. Enter the mode of travel (car, airplane, ship, train,bus) to reach the destination.
+Part 2
+The screenshot(s) you submit should display the date,city,country,number of days and mode of travel.Useappropriate labels.
+The program must test all possible combinations of dataentry as shown in the sample screen shot.
+Note:validations are not part of this lab so be sure toenter data correctly,so results are valid.
+
+output
+Vacation Diary
+Enter Date Vacation Started (mm/dd/yyyY):02/02/2023
+Enter City Visited: Tampa
+Enter Country Visited:USA
+Enter number of days: 5
+Enter Mode of Travel (car, airplane, ship, train, bus):car
+Details of your trip:
+Date:02/02/2023
+City: Tampa
+Country: USA
+Number of Days: 5
+Traveled By: car
+Bye!!!

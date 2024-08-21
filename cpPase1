@@ -1,0 +1,39 @@
+import java.util.Scanner;
+
+public class ItemDetails {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter item number (alphanumeric): ");
+        String itemNumber = scanner.nextLine();
+
+        System.out.print("Enter item description (alphanumeric): ");
+        String itemDescription = scanner.nextLine();
+
+        System.out.print("Enter the item price (decimal): ");
+        double itemPrice = scanner.nextDouble();
+
+        System.out.print("Enter quantity ordered (integer): ");
+        int quantityOrdered = scanner.nextInt();
+
+        System.out.print("Enter the total tax for the item (decimal): ");
+        double totalTax = scanner.nextDouble();
+
+        System.out.print("Enter the total discount for the item (decimal): ");
+        double totalDiscount = scanner.nextDouble();
+
+        System.out.print("Enter the net amount for the item (decimal): ");
+        double netAmount = scanner.nextDouble();
+
+        System.out.println("\nItem Details:");
+        System.out.printf("Item Number:\t\t%s%n", itemNumber);
+        System.out.printf("Item Description:\t%s%n", itemDescription);
+        System.out.printf("Item Price:\t\t%.2f%n", itemPrice);
+        System.out.printf("Quantity Ordered:\t%d%n", quantityOrdered);
+        System.out.printf("Tax Amount:\t\t%.2f%n", totalTax);
+        System.out.printf("Discount Amount:\t%.2f%n", totalDiscount);
+        System.out.printf("Net Amount:\t\t%.2f%n", netAmount);
+
+        scanner.close();
+    }
+} 

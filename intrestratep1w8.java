@@ -1,3 +1,12 @@
+
+package orderEntryPhase1;
+
+public class IntrestRateCalculatorPart1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+
 import java.util.Scanner;
 
 public class InterestCalculator {

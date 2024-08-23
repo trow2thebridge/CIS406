@@ -1,32 +1,33 @@
-package orderEntryPhase1
+# Tip Calculator
 
-public class TipCalculator
+package orderEntryPhase1;
 
 import java.util.Scanner;
 
 public class TipCalculator {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        boolean continueCalculating = true;
+        String continueInput = "y";
 
-        while (continueCalculating) {
-            System.out.print("Cost of meal: ");
+        while (continueInput.equalsIgnoreCase("y")) {
+            System.out.print("Enter the cost of the meal: ");
             double mealCost = scanner.nextDouble();
+            System.out.println("Cost of the meal: $" + String.format("%.2f", mealCost));
 
-            double[] tipPercentages = {0.15, 0.20, 0.25};
-
-            for (double tipPercentage : tipPercentages) {
+            for (double tipPercentage = 0.15; tipPercentage <= 0.25; tipPercentage += 0.05) {
                 double tipAmount = mealCost * tipPercentage;
-                double totalAmount = mealCost + tipAmount;
-                System.out.printf("%.0f%%\nTip amount: $%.2f\nTotal amount: $%.2f\n", tipPercentage * 100, tipAmount, totalAmount);
+                double totalCost = mealCost + tipAmount;
+
+                System.out.println("Tip Percentage: " + (tipPercentage * 100) + "%");
+                System.out.println("Tip Amount: $" + String.format("%.2f", tipAmount));
+                System.out.println("Total Cost: $" + String.format("%.2f", totalCost));
+                System.out.println();
             }
 
-            System.out.print("Continue? (y/n): ");
-            char response = scanner.next().charAt(0);
-            continueCalculating = (response == 'y' || response == 'Y');
+            System.out.print("Do you want to enter another meal cost? (y/n): ");
+            continueInput = scanner.next();
         }
 
-        System.out.println("Bye!!!");
         scanner.close();
     }
 }

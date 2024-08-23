@@ -1,3 +1,7 @@
+package orderEntryPhase1
+
+public class TipCalculator
+
 import java.util.Scanner;
 
 public class TipCalculator {

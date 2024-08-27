@@ -1,6 +1,43 @@
 package orderEntryPhase2;
 
+import java.util.Scanner;
+
 public class OrderEntryPhase2 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter item number: ");
+        String itemNumber = scanner.nextLine();
+
+        System.out.print("Enter item description: ");
+        String itemDescription = scanner.nextLine();
+
+        System.out.print("Enter item price: ");
+        double itemPrice = scanner.nextDouble();
+
+        System.out.print("Enter quantity ordered: ");
+        int quantityOrdered = scanner.nextInt();
+
+        double grossAmount = itemPrice * quantityOrdered;
+
+        System.out.print("Enter tax percentage: ");
+        double taxPercentage = scanner.nextDouble();
+        double taxAmount = (grossAmount * taxPercentage) / 100;
+
+        System.out.print("Enter discount percentage: ");
+        double discountPercentage = scanner.nextDouble();
+        double discountAmount = (grossAmount * discountPercentage) / 100;
+
+        double netAmount = grossAmount + taxAmount - discountAmount;
+
+        System.out.println("Gross Amount: " + grossAmount);
+        System.out.println("Tax Amount: " + taxAmount);
+        System.out.println("Discount Amount: " + discountAmount);
+        System.out.println("Net Amount: " + netAmount);
+
+        scanner.close();
+    }
+}
 
 
 

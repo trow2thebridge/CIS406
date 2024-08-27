@@ -1,3 +1,11 @@
+package travelTimeConverter
+
+
+public class TravelTimeConverter  {
+
+
+package travelTimeCalculator
+
 import java.util.Scanner;
 
 public class TravelTimeCalculator {

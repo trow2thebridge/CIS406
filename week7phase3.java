@@ -1,3 +1,8 @@
+package orderEntryPhase3;
+
+public class OrderEntryPhase3 {
+
+
 import java.util.Scanner;
 
 public class ItemCalculator {

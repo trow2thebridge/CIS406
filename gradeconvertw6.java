@@ -1,3 +1,7 @@
+package gradeConverter;
+
+public class GradeConverter {
+
 import java.util.Scanner;
 
 public class LetterGradeConverter {

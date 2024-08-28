@@ -1,3 +1,91 @@
 package orderEntryPhase4;
 
+import java.util.Scanner;
+
 public class OrderEntryPhase4 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        StringBuilder invoice = new StringBuilder();
+        String table = "Invoice\n";
+        
+        // Part 1
+        System.out.print("Enter invoice date: ");
+        String invoiceDate = scanner.nextLine();
+        invoice.append("Invoice Date: ").append(invoiceDate).append("\n");
+
+        System.out.print("Enter customer name: ");
+        String customerName = scanner.nextLine();
+        invoice.append("Customer Name: ").append(customerName).append("\n");
+
+        System.out.print("Enter customer street address: ");
+        String customerAddress = scanner.nextLine();
+        invoice.append("Address: ").append(customerAddress).append("\n");
+
+        System.out.print("Enter customer city: ");
+        String customerCity = scanner.nextLine();
+        invoice.append("City: ").append(customerCity).append("\n");
+
+        System.out.print("Enter customer state: ");
+        String customerState = scanner.nextLine();
+        invoice.append("State: ").append(customerState).append("\n");
+
+        System.out.print("Enter customer zip code: ");
+        String customerZip = scanner.nextLine();
+        invoice.append("Zip: ").append(customerZip).append("\n");
+
+        invoice.append("\nItem Number\tDescription\tPrice\tQuantity\tTax %\tTax Amount\tDiscount %\tDiscount Amount\tNet Amount\n");
+
+        // Part 2
+        int totalItems = 0;
+        double totalGrossAmount = 0, totalTaxAmount = 0, totalDiscountAmount = 0, totalNetAmount = 0;
+
+        while (true) {
+            System.out.print("Enter item number (or 'n' to finish): ");
+            String itemNumber = scanner.nextLine();
+            if (itemNumber.equalsIgnoreCase("n")) break;
+
+            System.out.print("Enter item description: ");
+            String itemDescription = scanner.nextLine();
+
+            System.out.print("Enter item price: ");
+            double itemPrice = scanner.nextDouble();
+
+            System.out.print("Enter quantity ordered: ");
+            int quantityOrdered = scanner.nextInt();
+
+            double grossAmount = itemPrice * quantityOrdered;
+            System.out.print("Enter tax percentage: ");
+            double taxPercentage = scanner.nextDouble();
+            double taxAmount = grossAmount * (taxPercentage / 100);
+
+            System.out.print("Enter discount percentage: ");
+            double discountPercentage = scanner.nextDouble();
+            double discountAmount = grossAmount * (discountPercentage / 100);
+
+            double netAmount = grossAmount + taxAmount - discountAmount;
+
+            invoice.append(itemNumber).append("\t").append(itemDescription).append("\t")
+                   .append(itemPrice).append("\t").append(quantityOrdered).append("\t")
+                   .append(taxPercentage).append("\t").append(taxAmount).append("\t")
+                   .append(discountPercentage).append("\t").append(discountAmount).append("\t")
+                   .append(netAmount).append("\n");
+
+            totalItems++;
+            totalGrossAmount += grossAmount;
+            totalTaxAmount += taxAmount;
+            totalDiscountAmount += discountAmount;
+            totalNetAmount += netAmount;
+
+            scanner.nextLine(); // Consume newline
+        }
+
+        invoice.append("\nTotal Items: ").append(totalItems)
+               .append("\nTotal Gross Amount: ").append(totalGrossAmount)
+               .append("\nTotal Tax Amount: ").append(totalTaxAmount)
+               .append("\nTotal Discount Amount: ").append(totalDiscountAmount)
+               .append("\nTotal Net Amount: ").append(totalNetAmount);
+
+        System.out.println(invoice.toString());
+        scanner.close();
+    }
+}

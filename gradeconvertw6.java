@@ -1,6 +1,45 @@
+language-java
+ Copy code
+# Grade Converter
+
 package gradeConverter;
 
+import java.util.Scanner;
+
 public class GradeConverter {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String continueInput;
+
+        do {
+            System.out.print("Enter numerical grade: ");
+            int numericalGrade = scanner.nextInt();
+            char letterGrade;
+
+            if (numericalGrade >= 90) {
+                letterGrade = 'A';
+            } else if (numericalGrade >= 80) {
+                letterGrade = 'B';
+            } else if (numericalGrade >= 70) {
+                letterGrade = 'C';
+            } else if (numericalGrade >= 60) {
+                letterGrade = 'D';
+            } else {
+                letterGrade = 'F';
+            }
+
+            System.out.println("Letter grade: " + letterGrade);
+            System.out.print("Continue? (y/n): ");
+            continueInput = scanner.next();
+        } while (continueInput.equalsIgnoreCase("y"));
+
+        System.out.println("Bye!!");
+        scanner.close();
+    }
+}
+
+
+
 
 import java.util.Scanner;
 

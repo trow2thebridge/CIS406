@@ -1,3 +1,36 @@
+package powersTable;
+
+import java.util.Scanner;
+
+public class PowersTable {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String continueInput = "y";
+
+        while (continueInput.equalsIgnoreCase("y")) {
+            System.out.print("Enter an integer: ");
+            int number = scanner.nextInt();
+            StringBuilder table = new StringBuilder();
+
+            table.append("Number\tSquare\tCube\n");
+
+            for (int i = 1; i <= number; i++) {
+                int square = i * i;
+                int cube = i * i * i;
+                table.append(i).append("\t").append(square).append("\t").append(cube).append("\n");
+            }
+
+            System.out.println(table.toString());
+            System.out.print("Do you want to continue? (y/n): ");
+            continueInput = scanner.next();
+        }
+
+        scanner.close();
+    }
+}
+
+
+
 
 package powersTable;
 

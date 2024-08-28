@@ -1,3 +1,93 @@
 package vacationDiaryPart2;
 
+import java.util.Scanner;
+
 public class VacationDiaryPart2 {
+    private static StringBuilder table = new StringBuilder("Date\tCity\tCountry\tDays\tMode of Travel\n");
+    private static final String[] MODES_OF_TRAVEL = {"car", "plane", "ship", "train", "bus"};
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String date, city, country, modeOfTravel;
+        int days;
+
+        while (true) {
+            System.out.print("Enter date (mmddyyyy) or 'End' to terminate: ");
+            date = scanner.nextLine();
+            if (date.equalsIgnoreCase("End")) {
+                break;
+            }
+            date = validateDate(date);
+
+            System.out.print("Enter city visited: ");
+            city = validateCity(scanner.nextLine());
+
+            System.out.print("Enter country visited: ");
+            country = validateCountry(scanner.nextLine());
+
+            System.out.print("Enter number of days (1-30): ");
+            days = validateDays(scanner.nextInt());
+            scanner.nextLine(); // consume newline
+
+            System.out.print("Enter mode of travel (car, plane, ship, train, bus): ");
+            modeOfTravel = validateModeOfTravel(scanner.nextLine());
+
+            table.append(date).append("\t").append(city).append("\t").append(country).append("\t")
+                 .append(days).append("\t").append(modeOfTravel).append("\n");
+        }
+
+        System.out.println(table.toString());
+        scanner.close();
+    }
+
+    private static String validateDate(String date) {
+        while (!date.matches("\\d{8}")) {
+            System.out.print("Invalid date format. Please enter again (mmddyyyy): ");
+            date = new Scanner(System.in).nextLine();
+        }
+        return date;
+    }
+
+    private static String validateCity(String city) {
+        if (city.length() < 15) {
+            city = String.format("%-15s", city);
+        } else if (city.length() > 15) {
+            city = city.substring(0, 15);
+        }
+        return city;
+    }
+
+    private static String validateCountry(String country) {
+        if (country.length() < 15) {
+            country = String.format("%-15s", country);
+        } else if (country.length() > 15) {
+            country = country.substring(0, 15);
+        }
+        return country;
+    }
+
+    private static int validateDays(int days) {
+        while (days < 1 || days > 30) {
+            System.out.print("Invalid number of days. Please enter again (1-30): ");
+            days = new Scanner(System.in).nextInt();
+        }
+        return days;
+    }
+
+    private static String validateModeOfTravel(String modeOfTravel) {
+        while (!isValidMode(modeOfTravel)) {
+            System.out.print("Invalid mode of travel. Please enter again (car, plane, ship, train, bus): ");
+            modeOfTravel = new Scanner(System.in).nextLine();
+        }
+        return modeOfTravel;
+    }
+
+    private static boolean isValidMode(String mode) {
+        for (String validMode : MODES_OF_TRAVEL) {
+            if (validMode.equalsIgnoreCase(mode)) {
+                return true;
+            }
+        }
+        return false;
+    }
+}

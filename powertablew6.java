@@ -24,7 +24,7 @@ public class PowersTable {
             System.out.print("Do you want to continue? (y/n): ");
             continueInput = scanner.next();
         }
-
+        System.out.println("Bye!!");
         scanner.close();
     }
 }
